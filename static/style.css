@@ -1,0 +1,598 @@
+/* Reset default styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Define global styles for the body */
+body {
+  margin: 0;
+  background: #ffffff;
+}
+
+/* Styles for the main container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 60%;
+  width: 60%;
+}
+
+/* Styles for topic input field */
+.topic-input {
+  width: 90%;
+  height: 60px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0;
+}
+
+/* Styles for the start screen */
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  width: 90%;
+  margin: 50px auto;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 90vh;
+}
+
+/* Styles for the main app */
+.app {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 30px; 
+  height: 100vh;
+}
+
+/* Styles for the quiz section */
+.quiz-section {
+  width: 30%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles for chat and typing containers */
+.chat-and-typing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: space-between;
+}
+
+/* Styles for the question container */
+.question-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: black;
+  padding: 20px 0;
+}
+
+/* Styles for the quiz container */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Styles for button group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+/* Styles for chat image */
+.chat-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Styles for chat container */
+.chat-container {
+  overflow-y: auto;
+  height: calc(100% - 20%);
+  margin: 20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 0 0 5px 5px #cccccc;
+}
+
+/* Styles for selected button */
+.btn.selected {
+  border: 2px solid lightblue;
+}
+
+/* Styles for a chat message */
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Styles for avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cccccc;
+}
+
+/* Styles for avatar image */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Styles for avatar label container */
+.avatar-label-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+/* User and Assistant label styles */
+.label {
+  min-width: 50px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Styles for message content */
+.message-content {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 10px 15px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  flex-grow: 1;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Styles for typing container */
+.typing-container {
+  height: 20%;
+  position: relative;
+  background: white;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #807d7d;
+  border-radius: 20px;
+}
+
+/* Styles for typing content */
+.typing-container .typing-content {
+  display: flex;
+  max-width: 950px;
+  width: 100%;
+  background: white;
+  align-items: flex-end;
+}
+
+/* Styles for typing textarea */
+.typing-container .typing-textarea {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+/* Styles for typing text area */
+.typing-textarea textarea {
+  resize: none;
+  height: 55px;
+  width: 100%;
+  border: none;
+  padding: 15px 45px 15px 20px;
+  color: var(--text-color);
+  font-size: 1rem;
+  border-radius: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+  background: var(--incoming-chat-bg);
+  outline: 1px solid var(--incoming-chat-border);
+}
+
+/* Styles for typing textarea placeholder */
+.typing-textarea textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+/* Styles for typing content span */
+.typing-content span {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  border-radius: 4px;
+  font-size: 1.35rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+}
+
+/* Styles for typing textarea span */
+.typing-textarea span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+/* Styles for typing textarea valid span */
+.typing-textarea textarea:valid ~ span {
+  visibility: visible;
+}
+
+/* Styles for typing controls */
+.typing-controls {
+  display: flex;
+}
+
+/* Styles for typing controls span */
+.typing-controls span {
+  margin-left: 7px;
+  font-size: 1.4rem;
+  background: var(--incoming-chat-bg);
+  outline: 1px solid var(--incoming-chat-border);
+}
+
+/* Styles for typing controls span on hover */
+.typing-controls span:hover {
+  background: var(--icon-hover-bg);
+}
+
+/* Styles for start screen and app heading */
+.start-screen h1, .app h1 {
+  font-size: 30px;
+  color: #001e4d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styles for start button */
+#start-btn {
+  background: #4a90e2;
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles for start button on hover */
+#start-btn:hover {
+  background-color: #3778c2;
+}
+
+/* Styles for generic buttons */
+.btn {
+  background: #fff;
+  color: #222;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid #222;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Styles for generic buttons on hover */
+.btn:hover:not([disabled]) {
+  background: #222;
+  color: #fff;
+}
+
+/* Styles for disabled buttons */
+.btn:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
+/* Styles for specific green button */
+.green-btn {
+  background-color: green;
+  color: white;
+}
+
+/* Styles for answer buttons */
+.answer-buttons {
+  width: 100%;
+}
+
+/* Styles for confirm button */
+#confirm-btn {
+  height: 40px;
+}
+
+/* Styles for next button */
+#next-btn {
+  display: none;
+}
+
+/* Styles for back button */
+#back-btn {
+  background: #001e4d;
+  color: #fff;
+  font-weight: 500;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Styles for correct answer */
+.correct {
+  background: #9aeabc;
+}
+
+/* Styles for incorrect answer */
+.incorrect {
+  background: #ff9393;
+}
+
+/* Styles for loader animation */
+.loader {
+  margin-left: 20px;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: rotate(45deg);
+  overflow: hidden;
+}
+
+/* Styles for loader after animation */
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  margin: auto;
+  background: #222b32;
+}
+
+/* Styles for loader before animation */
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  margin: auto;
+  background: #de3500;
+  animation: diamondLoader 2s linear infinite;
+}
+
+/* Keyframes for loader animation */
+@keyframes diamondLoader {
+  0%, 10% {
+    transform: translate(-64px , -64px) rotate(-45deg)
+  }
+  90%, 100% {
+    transform: translate(0px , 0px) rotate(-45deg)
+  }
+}
+
+.image-loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: image-loader-rotation 1s linear infinite;
+}
+
+.image-loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #FF3D00;
+  border-bottom: 4px solid transparent;
+  animation: image-loader-rotation 0.5s linear infinite reverse;
+}
+
+@keyframes image-loader-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styles for toast message */
+.toast-message {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+  z-index: 100;
+}
+
+/* Show toast message styles */
+.toast-message.show {
+  opacity: 1;
+  bottom: 30px;
+}
+
+/* Styles for YouTube video iframe */
+.youtube-video iframe {
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 300px;
+}
+
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.image-gallery img {
+  width: 100px;
+
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+
+}
+
+.image-gallery img.zoomed {
+  transform: scale(2);
+
+  z-index: 2;
+
+  position: relative;
+
+  transition: transform 0.2s;
+
+}
+
+
+
+.modal {
+  display: none;
+
+  position: fixed;
+
+  z-index: 1;
+
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  height: 100%;
+
+  overflow: auto;
+
+  background-color: rgb(0, 0, 0);
+
+  background-color: rgba(0, 0, 0, 0.9);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+.modal img {
+  min-width: 50%;
+
+  min-height: 50vh;
+
+  max-width: 80%;
+  max-height: 80vh;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
